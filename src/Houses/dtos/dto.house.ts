@@ -1,4 +1,15 @@
-import { IsIn, IsNotEmpty, IsNumber, IsPositive, IsString, MaxLength, Min, Max, MinLength, IsBoolean } from "class-validator";
+import {
+  IsIn,
+  IsNotEmpty,
+  IsNumber,
+  IsPositive,
+  IsString,
+  MaxLength,
+  Min,
+  Max,
+  MinLength,
+  IsBoolean,
+} from 'class-validator';
 
 export class DtoHouse {
   @IsNotEmpty()
@@ -9,8 +20,7 @@ export class DtoHouse {
   @IsNotEmpty()
   @MinLength(5)
   @MaxLength(230)
-  apresentation:string
-
+  apresentation: string;
 
   @IsString()
   @MinLength(10)
@@ -20,31 +30,30 @@ export class DtoHouse {
   @MinLength(3)
   @MaxLength(5)
   @IsNotEmpty()
-  price: string; 
+  price: string;
 
   @IsString()
   @IsNotEmpty()
-  @IsIn(["🏡", "🏦"])
+  @IsIn(['🏡', '🏦'])
   type: string;
 
-  @IsIn(["1", "2", "3", "4", "5"])
+  @IsIn(['1', '2', '3', '4', '5'])
   @IsNotEmpty()
-  bathrooms: string; 
+  bathrooms: string;
 
   @IsNotEmpty()
-  @IsIn(["1", "2", "3", "4", "5"])
-  rooms: number
-  
-  @IsNotEmpty()
-  @IsString()
-  city: string
+  @IsIn(['1', '2', '3', '4', '5'])
+  rooms: number;
 
   @IsNotEmpty()
   @IsString()
-  state: string
+  city: string;
 
-  @IsIn(["Yes", "No"])
   @IsNotEmpty()
-  pets: string 
+  @IsString()
+  state: string;
 
+  @IsIn(['Yes', 'No'])
+  @IsNotEmpty()
+  pets: string;
 }

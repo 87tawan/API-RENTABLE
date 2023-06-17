@@ -1,34 +1,38 @@
-import { IsEmail, IsNotEmpty, IsStrongPassword } from "class-validator";
+import { IsEmail, IsNotEmpty, IsNumber, IsString, IsStrongPassword, MaxLength, MinLength, isNotEmpty, isNumber } from 'class-validator';
 
 export class DtoUser {
 
   @IsNotEmpty()
-  name: string; 
-  
+  @MinLength(3)
+  @MaxLength(20)
+  name: string;
+
   @IsNotEmpty()
   @IsEmail()
   email: string;
-  
+
   @IsNotEmpty()
   @IsStrongPassword()
-  password: string
+  password: string;
+
+  @MinLength(5)
+  @MaxLength(50)
+  @IsNotEmpty()
+  contact: string
 }
 
 export class DtoUserLogin {
   @IsNotEmpty()
   @IsEmail()
   email: string;
-  
 
   @IsNotEmpty()
   @IsStrongPassword()
-  password: string
-  
+  password: string;
 }
 
 
-export class DtoFindOneByEmail {
+export class DtoEditContact {
   @IsNotEmpty()
-  @IsEmail()
-  email: string 
+  contact: string 
 }

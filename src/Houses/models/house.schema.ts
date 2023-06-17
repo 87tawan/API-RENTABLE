@@ -11,9 +11,9 @@ export class House {
   @Prop()
   title: string;
 
-  @Prop() 
-  apresentation: string
-  
+  @Prop()
+  apresentation: string;
+
   @Prop()
   description: string;
 
@@ -23,24 +23,23 @@ export class House {
   @Prop()
   type: string;
 
-  @Prop() 
-  bathrooms: number; 
+  @Prop()
+  bathrooms: number;
 
   @Prop()
-  rooms: number
-  
-  @Prop() 
-  city: string 
+  rooms: number;
 
   @Prop()
-  state: string
-
+  city: string;
 
   @Prop()
-  pets: string
+  state: string;
 
-  @Prop({default: Date.now()})
-  created_at: Date 
+  @Prop()
+  pets: string;
+
+  @Prop({ default: Date.now() })
+  created_at: Date;
 }
 
 export const HouseSchema = SchemaFactory.createForClass(House);
