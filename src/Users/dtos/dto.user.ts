@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsStrongPassword } from "class-validator";
+import { IsEmail, IsNotEmpty, IsStrongPassword, maxLength } from "class-validator";
 
 export class DtoUser {
 
@@ -12,6 +12,9 @@ export class DtoUser {
   @IsNotEmpty()
   @IsStrongPassword()
   password: string
+
+  @IsNotEmpty()
+  contact: string
 }
 
 export class DtoUserLogin {
@@ -27,8 +30,3 @@ export class DtoUserLogin {
 }
 
 
-export class DtoFindOneByEmail {
-  @IsNotEmpty()
-  @IsEmail()
-  email: string 
-}

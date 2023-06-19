@@ -6,6 +6,10 @@ export type UserDocument = HydratedDocument<User>;
 
 @Schema()
 export class User {
+
+  @Prop() 
+  photo: string;
+  
   @Prop()
   name: string;
 
@@ -18,6 +22,8 @@ export class User {
   @Prop({default: Date.now()})
   created_at: Date 
 
+  @Prop() 
+  contact: string 
   
 }
 

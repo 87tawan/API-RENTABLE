@@ -4,6 +4,7 @@ import { User, UserSchema } from "src/Users/models/user.schema"
 import { UsersController } from "./controllers/user.controller";
 import { UsersServices } from "./services/user.service";
 import { JwtModule } from "@nestjs/jwt";
+import { CloudinaryModule } from "src/cloudinary/cloudinary.module";
 
 
 @Module({
@@ -13,8 +14,8 @@ import { JwtModule } from "@nestjs/jwt";
   JwtModule.register({
     secret: "cor", 
     signOptions: { expiresIn: '1h' }, 
-  })
-  
+  }),
+  CloudinaryModule 
 ],
 })
 

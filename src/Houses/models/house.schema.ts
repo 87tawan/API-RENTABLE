@@ -41,6 +41,13 @@ export class House {
 
   @Prop({default: Date.now()})
   created_at: Date 
+
+  @Prop()
+  userId: string 
+
+
+  @Prop()
+  contact: string 
 }
 
 export const HouseSchema = SchemaFactory.createForClass(House);

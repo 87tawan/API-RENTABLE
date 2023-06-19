@@ -2,7 +2,7 @@ import { IsIn, IsNotEmpty, IsNumber, IsPositive, IsString, MaxLength, Min, Max, 
 
 export class DtoHouse {
   @IsNotEmpty()
-  @MaxLength(50)
+  @MaxLength(30)
   title: string;
 
   @IsString()
@@ -46,5 +46,8 @@ export class DtoHouse {
   @IsIn(["Yes", "No"])
   @IsNotEmpty()
   pets: string 
+
+  @IsNotEmpty()
+  userId: string
 
 }
